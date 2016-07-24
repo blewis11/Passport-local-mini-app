@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<title>oAuth</title>
+
+	<!--CSS-->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/stylesheet.css">
+<body>
+	<div class='container'>
+		<div class='jumbotron text-center'>
+			<h1>Log In</h1>
+		</div>
+
+		<div class='thinner'>
+			<form action='/login' method='post' role='form'>
+				<fieldset class="form-group">
+					<label class="form-control-label" for="formGroupEmail">Email Address</label>
+					<input type="email" class="form-control" id="formGroupEmail" placeholder="Email Address" name="email">
+				</fieldset>
+				
+				<fieldset class='form-group'>
+					<label class='form-group-label' for='formGroupPassword'>Password</label>
+					<input type='password' class='form-control' id='formGroupPassword' placeholder='Password' name='password'>
+				</fieldset><br><br> 
+				<button type="submit" class='btn btn-primary'>Log In</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
