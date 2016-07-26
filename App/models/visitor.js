@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs'); 
 
 var Schema = mongoose.Schema;
 
@@ -10,8 +11,9 @@ var visitorSchema = new Schema({
 	posts : [{ type: String }]
 });
 
-visitorSchema.methods.validPassword = function(pwd){
-	return (this.password == pwd);
+
+visitorSchema.methods.validPassword = function(password){
+	return (password == this.password);
 };
 
 var visitor = mongoose.model('Visitor', visitorSchema);

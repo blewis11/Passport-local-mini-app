@@ -2,6 +2,8 @@
   "name" : "mean oAuth",
   "version" : "1.0.0",
   "dependencies" : {
-     "bootstrap" : "latest"
+     "bootstrap" : "latest",
+     "angular-route" : "latest",
+     "angular" : "latest"
   }
 }
