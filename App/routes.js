@@ -1,5 +1,11 @@
 module.exports = function (app, passport){
 
+	//test route to get user information
+	app.get('/userInfo', function(req,res){
+		var user = req.user;
+		res.json(user);
+	});
+
 	//home page with login
 	app.get('/', function(req,res){
 		res.sendfile('./Public/views/index.html');
