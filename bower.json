@@ -4,6 +4,7 @@
   "dependencies" : {
      "bootstrap" : "latest",
      "angular-route" : "latest",
-     "angular" : "latest"
+     "angular" : "latest",
+     "jquery" : "latest"
   }
 }
