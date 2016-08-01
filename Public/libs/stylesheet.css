@@ -9,3 +9,16 @@
 .thinner {
 	width: 55%;
 }
+
+ul {
+	list-style-type: none;
+}
+
+.centered{
+	position: relative;
+	left: 23%;
+} 
+
+body {
+ 	font-family: Acumin Pro;
+}

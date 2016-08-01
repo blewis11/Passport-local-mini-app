@@ -4,5 +4,9 @@ angular.module('profileCtrl', []).controller('profileController', function($scop
 	
 	$http.get('/userInfo').then(function(response){
 		$scope.firstName = response.data.firstName;
+		$scope.posts = response.data.posts.sort(function(a,b){
+		return new Date(b.date) - new Date(a.date);
+		}); 
 	});
 });
+

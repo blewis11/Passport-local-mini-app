@@ -8,9 +8,11 @@ var visitorSchema = new Schema({
 	lastName : { type: String, required : true},
 	password : { type: String, required : true},
 	email : { type: String, required : true},
-	posts : [{ type: String }]
+	posts : [{ 
+		message: {type :String },
+		date: {type: Date, require: true, default: Date.now}
+	}]
 });
-
 
 visitorSchema.methods.validPassword = function(password){
 	return (password == this.password);

@@ -1,6 +1,38 @@
-module.exports = function (app, passport){
+var visitor = require('./models/visitor.js');
 
-	//test route to get user information
+module.exports = function (app, passport){
+	//route to delete a post from user
+	app.get('/deletePost/:id', function(req,res){
+		var id = req.params.id;
+		console.log(id);
+		var userEmail = req.user.email;
+
+		visitor.update({email : userEmail}, {$pull: {posts: { _id : id}}}, function(err){
+			if (err)
+				res.send(err);
+			console.log('deleted post');
+		});
+
+		res.redirect('back');
+	});
+
+	//route to create a new post for a user 
+	app.post('/newPost', function(req,res){
+		var userEmail = req.user.email;
+		console.log(userEmail);
+		var newPost = req.body.post;
+		console.log(newPost);
+
+		visitor.update({email : userEmail}, {$push: {posts : {message : newPost, date: Date.now}}}, function(err){
+			if (err)
+				res.send(err);
+			console.log('post saved');
+			res.redirect('back');
+		});
+
+	});
+
+	//route to get user information
 	app.get('/userInfo', function(req,res){
 		var user = req.user;
 		res.json(user);

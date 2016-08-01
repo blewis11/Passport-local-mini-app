@@ -25,6 +25,27 @@
 			<h1>{{ firstName }}'s Profile </h1>
 			<h4>{{ subheader }}</h4>
 		</div>
+		
+		<div class='centered'>
+			<div class='row'>
+				<div class='col-sm-12 text-center thinner'>
+					<form action='/newPost' method='post' role='form'>
+						<fieldset class='form-group'>
+							<label for='newPost'>Say Something:</label>
+							<input id='newPost' name='post' class='form-control' type='text' required='true' placeholder='Enter new post'>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-sm-12 text-center thinner well' ng-repeat='post in posts' >
+						<p> {{ post.message }}</p>
+						<a ng-href='/deletePost/{{post._id}}' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>
+				</div>
+			</div>
+		</div>
+
 		<div class="row text-center">
 			<div class="col-sm-12 padded">
 				<a class='btn btn-primary' href='/logout' role='button'> Logout </a>
