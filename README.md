@@ -1,5 +1,5 @@
-###Passport-Local Mini App
-##This app implements the following:
+##Passport-Local Mini App
+###This app implements the following:
 
 * Passport-local strategy for users to login and logout
 * Connection to local mongodb for user and post storage
