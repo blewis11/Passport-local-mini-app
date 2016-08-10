@@ -2,7 +2,7 @@
 ###This app implements the following:
 
 * Passport-local strategy for users to login and logout
-* Connection to local mongodb for user and post storage
+* Connection to mongodb for user and post storage
 * Server set up with Express Js
 * Angular templating
 
